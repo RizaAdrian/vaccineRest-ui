@@ -28,8 +28,8 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = '4200';
-app.set('port', port);
+/*const port = '4200';
+app.set('port', port);*/
 
 /**
  * Create HTTP server.
