@@ -14,14 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false, limit: '20mb' }));
 app.use(cors());
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist/vaccine-ui')));
 
 // Set our api routes proxy to point to spring boot server
 app.use('/server', proxy('https://vaccine-bot.herokuapp.com/'));
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/vaccine-ui/index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 /**
