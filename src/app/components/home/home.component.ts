@@ -15,7 +15,7 @@ moldels: string[] = [
 ];
 vaccineForm: FormGroup;
 validMessage: string = "";
-  models: any;
+
   constructor(private vaccineService: VaccineService) { }
 
   ngOnInit() {

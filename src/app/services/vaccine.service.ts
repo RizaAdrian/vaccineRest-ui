@@ -17,7 +17,7 @@ export class VaccineService {
   }
 
   getVaccine(id: number){
-    return this.http.get('/server/api/vaccine' + id)
+    return this.http.get('/server/api/vaccine/' + id)
   }
 
   createVaccineRegistration(vaccine){

@@ -13,7 +13,7 @@ export class ViewRegistrationComponent implements OnInit {
   constructor(private vaccineService: VaccineService , private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getVaccineReg(this.route.snapshot.params.id)
+    this.getVaccineReg(this.route.snapshot.params.id);
   }
 
   getVaccineReg(id: number) {
