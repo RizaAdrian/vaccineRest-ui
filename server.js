@@ -21,7 +21,7 @@ app.use('/server', proxy('https://vaccine-bot.herokuapp.com/'));
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist/vaccine-ui/index.html'));
 });
 
 /**
