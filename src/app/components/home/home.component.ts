@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VaccineService} from "../../services/vaccine.service";
 import {FormGroup , FormControl , Validators} from "@angular/forms";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,16 @@ import {FormGroup , FormControl , Validators} from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
 moldels: string[] = [
-  'Anti-Tetatuns',
+  'Anti-Tetanus',
   'Anti-Rubeolic',
   'Anti-Hepatic'
 ];
 vaccineForm: FormGroup;
 validMessage: string = "";
 
-  constructor(private vaccineService: VaccineService) { }
+  constructor(private vaccineService: VaccineService,private route: Router) {
+
+  }
 
   ngOnInit() {
     this.vaccineForm = new FormGroup({
@@ -33,11 +36,11 @@ validMessage: string = "";
 
   submitRegistration() {
     if (this.vaccineForm.valid) {
-      this.validMessage = 'Your bike registration has been submitted. Thank you!';
+      this.validMessage = 'Your vaccine registration has been submitted. Thank you!';
       this.vaccineService.createVaccineRegistration(this.vaccineForm.value).subscribe(
         data => {
           // this.bikeform.reset();
-          return true;
+          this.route.navigate(['/admin'])
         },
         error => {
           console.log(error);

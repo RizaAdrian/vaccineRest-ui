@@ -5,31 +5,45 @@
   <div>
     <div class="form-group">
       <label>Buyer Name</label>
-      <div class="form-control">{{vaccineReg?.name}}</div>
+      <div *ngIf="!editMode" class="form-control">{{vaccineReg?.name}}</div>
+      <div><input *ngIf="editMode" class="form-control" [(ngModel)]="name"/></div>
     </div>
     <div class="form-group">
       <label>Email</label>
-      <div class="form-control">{{vaccineReg?.email}}</div>
+      <div *ngIf="!editMode" class="form-control">{{vaccineReg?.email}}</div>
+      <div><input *ngIf="editMode" class="form-control" [(ngModel)]="email"/></div>
     </div>
     <div class="form-group">
       <label>Phone</label>
-      <div class="form-control">{{vaccineReg?.phone}}</div>
+      <div *ngIf="!editMode" class="form-control">{{vaccineReg?.phone}}</div>
+      <div><input *ngIf="editMode" class="form-control" [(ngModel)]="phone"/></div>
     </div>
     <div class="form-group">
-      <label>Vaccine Model</label>
-      <div class="form-control">{{vaccineReg?.model}}</div>
+      <label>Vaccine Type</label>
+      <div *ngIf="!editMode" class="form-control">{{vaccineReg?.model}}</div>
+      <div><input *ngIf="editMode" class="form-control" [(ngModel)]="model"/></div>
     </div>
     <div class="form-group">
       <label>Vaccine Serial Number</label>
-      <div class="form-control">{{vaccineReg?.serialNumber}}</div>
+      <div *ngIf="!editMode" class="form-control">{{vaccineReg?.serialNumber}}</div>
+      <div><input *ngIf="editMode" class="form-control" [(ngModel)]="serialNumber"/></div>
     </div>
     <div class="form-group">
       <label>Purchase Price</label>
-      <div class="form-control">{{vaccineReg?.purchasePrice}}</div>
+      <div *ngIf="!editMode" class="form-control">{{vaccineReg?.purchasePrice}}</div>
+      <div><input *ngIf="editMode" class="form-control" [(ngModel)]="purchasePrice"/></div>
     </div>
     <div class="form-group">
         <label>Purchase Date</label>
-        <div class="form-control">{{vaccineReg?.purchaseDate}}</div>
+        <div *ngIf="!editMode" class="form-control">{{vaccineReg?.purchaseDate}}</div>
+      <div><input *ngIf="editMode" type="date" class="form-control" [(ngModel)]="purchaseDate"/></div>
       </div>
+
+    <div class = "editButtons">
+      <button type="button" class="btn btn-outline-primary"*ngIf="!editMode" (click)="toggleEdit()">Edit</button>
+      <button type="button" class="btn btn-outline-info"*ngIf="editMode" (click)="toggleEdit()">Cancel</button>
+      <button type="button" class="btn btn-outline-success"*ngIf="editMode" (click)="onEdit()">Save</button>
+      <button type="button" class="btn btn-outline-danger"(click)="onDelete()">Delete</button>
+    </div>
   </div>
 </div>

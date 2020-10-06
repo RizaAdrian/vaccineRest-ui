@@ -1,10 +1,11 @@
 <div class="container">
+  <app-elasticsearch [search]="onSearch"></app-elasticsearch>
   <table class="table table-bordered table-inverse">
     <tr>
-      <th>Owner Name</th>
+      <th>Buyer Name</th>
       <th>Email</th>
       <th>Model</th>
-      <th class="text-right">Purchase Price</th>
+      <th class="text-right">Purchase Price($)</th>
     </tr>
     <tr *ngFor="let vaccine of vaccines">
       <td>

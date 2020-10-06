@@ -16,7 +16,7 @@
       <input type="text" class="form-control" formControlName="phone" required/>
     </div>
     <div class="form-group">
-      <label>Vaccine Model</label>
+      <label>Vaccine Type</label>
       <select class="form-control" formControlName="model" required>
         <option value="">Please select a Vaccine</option>
         <option *ngFor="let m of moldels"
@@ -30,14 +30,16 @@
       <input type="text" class="form-control" formControlName="serialNumber" required/>
     </div>
     <div class="form-group">
-      <label>Purchase Price</label>
+      <label>Purchase Price($)</label>
       <input type="text" class="form-control" formControlName="purchasePrice" required/>
     </div>
     <div class="form-group">
        <label>Purchase Date</label>
-       <input type="text" class="form-control" formControlName="purchaseDate" required/>
+       <input type="date" class="form-control" formControlName="purchaseDate" required/>
      </div>
 
-    <button type="submit" class="btn btn-primary" >Submit</button>
+    <div class="form-group">
+      <button type="submit" class="btn btn-outline-primary w-100" >Submit</button>
+    </div>
   </form>
 </div>

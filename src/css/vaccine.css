@@ -1,0 +1,44 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Courier New', sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  background-image: url("Gj2FUO.jpg");
+  background-size: 100% 100%;;
+  color: white;
+}
+
+h1 {
+  font-size: 2.0em;
+}
+
+a{color: white}
+
+table{margin-top: 2%}
+
+.table-bordered, .table-bordered td, .table-bordered th {
+  border: 1px solid whitesmoke;
+}
+.form-group{
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.table{
+  padding-right: 10% !important;
+  padding-left: 10% !important;
+}
+.form-inline{
+  width: 88% !important;
+  padding-left: 10%;}

@@ -9,7 +9,9 @@ import { VaccineService} from "../../services/vaccine.service";
 export class AdminComponent implements OnInit {
 public vaccines;
 
-  constructor(private vaccineService: VaccineService) { }
+  constructor(private vaccineService: VaccineService) {
+    this.onSearch = this.onSearch.bind(this)
+  }
 
   ngOnInit() {
     this.getVaccines();
@@ -22,4 +24,11 @@ public vaccines;
       ()=>console.log('vaccines are loaded')
     );
   }
+
+  onSearch = (searchValue: string) => {
+    this.vaccineService.searchVaccine(searchValue).subscribe(
+      data =>this.vaccines = data
+    )
+  }
+
 }
